@@ -51,7 +51,7 @@ import javax.sql.DataSource;
 @Configuration
 @AutoConfigureOrder(Ordered.LOWEST_PRECEDENCE) // Makes sure that this configuration will be processed last by Spring Boot
 @AutoConfigureAfter(ProcessEngineAutoConfiguration.class)
-public class FlowableEngineConfiguration {
+public class CustomEngineConfiguration {
 	
 	@Primary
 	@Bean
