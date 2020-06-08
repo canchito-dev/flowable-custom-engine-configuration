@@ -48,11 +48,11 @@ The following listing shows the `pom.xml` file that is created when you choose M
 		<relativePath/> <!-- lookup parent from repository -->  
 	</parent>  
 	<groupId>com.canchitodev.example</groupId>  
-	<artifactId>spring-flowable-integration</artifactId>  
+	<artifactId>flowable-custom-engine-configuration</artifactId>  
 	<version>0.0.1-SNAPSHOT</version>  
 	<packaging>war</packaging>  
   
-	<name>spring-flowable-integration</name>  
+	<name>flowable-custom-engine-configuration</name>  
 	<description>Demo project showing how to customize Flowable's engine</description>  
   
 	<organization>
