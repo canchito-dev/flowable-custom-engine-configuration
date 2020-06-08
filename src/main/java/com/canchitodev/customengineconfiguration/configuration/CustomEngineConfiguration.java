@@ -24,13 +24,14 @@
  * @author 		José Carlos Mendoza Prego
  * @copyright	Copyright (c) 2020, canchito-dev (http://www.canchito-dev.com)
  * @license		http://opensource.org/licenses/MIT	MIT License
- * @link		http://www.canchito-dev.com/public/blog/2020/05/14/customizing-flowable-engine/
- * @link		https://github.com/canchito-dev/custom-engine-configuration/
+ * @link		http://www.canchito-dev.com/public/blog/2020/05/14/flowable-custom-engine-configuration/
+ * @link		https://github.com/canchito-dev/flowable-custom-engine-configuration/
  **/
 
 package com.canchitodev.customengineconfiguration.configuration;
 
 import com.zaxxer.hikari.HikariDataSource;
+import org.flowable.common.engine.api.delegate.event.FlowableEventListener;
 import org.flowable.common.engine.impl.persistence.StrongUuidGenerator;
 import org.flowable.spring.SpringProcessEngineConfiguration;
 import org.flowable.spring.boot.EngineConfigurationConfigurer;
@@ -46,6 +47,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.core.Ordered;
 
 import javax.sql.DataSource;
+import java.util.Arrays;
 
 @Primary
 @Configuration
@@ -72,18 +74,18 @@ public class CustomEngineConfiguration {
 	}
 	
 	@Bean
-    EngineConfigurationConfigurer<SpringProcessEngineConfiguration> EngineConfigurationConfigurer(
+    EngineConfigurationConfigurer<SpringProcessEngineConfiguration> engineConfigurationConfigurer(
 			@Qualifier("flowableDataSource") DataSource dataSource
 	) {
 		return engineConfiguration -> {
 			/**
-             * Flowable DOCS (v 6.5.0)'s user guide - UUID ID generator for high concurrency
+             * Flowable DOCS (v6.5.0)'s user guide - UUID ID generator for high concurrency
              * https://flowable.com/open-source/docs/bpmn/ch18-Advanced/#uuid-id-generator-for-high-concurrency
              **/
 			engineConfiguration.setIdGenerator(new StrongUuidGenerator());
 			
 			/**
-             * Flowable DOCS (v 6.5.0)'s user guide - Database configuration
+             * Flowable DOCS (v6.5.0)'s user guide - Database configuration
              * https://flowable.com/open-source/docs/bpmn/ch03-Configuration/#database-configuration
 			 *
 			 * The data source that is constructed based on the provided JDBC properties will have the default MyBatis connection pool settings. The following attributes can
@@ -101,10 +103,10 @@ public class CustomEngineConfiguration {
 //			engineConfiguration.setJdbcMaxWaitTime(jdbcMaxWaitTime);
 			
 			/**
-             * Flowable DOCS (v 6.5.0)'s user guide - Event handlers
+             * Flowable DOCS (v6.5.0)'s user guide - Event handlers
              * https://flowable.com/open-source/docs/bpmn/ch03-Configuration/#event-handlers
              **/
-//			engineConfiguration.setEventListeners(Arrays.<FlowableEventListener>asList(new DefaultEventHandler()));
+			engineConfiguration.setEventListeners(Arrays.<FlowableEventListener>asList(new CustomEventHandler()));
 		};
 	}
 }

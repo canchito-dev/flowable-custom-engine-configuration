@@ -24,8 +24,8 @@
  * @author 		José Carlos Mendoza Prego
  * @copyright	Copyright (c) 2020, canchito-dev (http://www.canchito-dev.com)
  * @license		http://opensource.org/licenses/MIT	MIT License
- * @link		http://www.canchito-dev.com/public/blog/2020/05/14/customizing-flowable-engine/
- * @link		https://github.com/canchito-dev/custom-engine-configuration/
+ * @link		http://www.canchito-dev.com/public/blog/2020/05/14/flowable-custom-engine-configuration/
+ * @link		https://github.com/canchito-dev/flowable-custom-engine-configuration/
  **/
 
 package com.canchitodev.customengineconfiguration;

@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.canchitodev</groupId>
-	<artifactId>custom-engine-configuration</artifactId>
+	<artifactId>flowable-custom-engine-configuration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>custom-engine-configuration</name>
+	<name>flowable-custom-engine-configuration</name>
 	<description>Demo project showing how to customize Flowable's engine</description>
 
 	<organization>
@@ -23,10 +23,10 @@
 
 	<issueManagement>
 		<system>Canchito Development</system>
-		<url>https://github.com/canchito-dev/custom-engine-configuration/issues</url>
+		<url>https://github.com/canchito-dev/flowable-custom-engine-configuration/issues</url>
 	</issueManagement>
 
-	<url>http://www.canchito-dev.com/public/blog/2020/05/14/customizing-flowable-engine/</url>
+	<url>http://www.canchito-dev.com/public/blog/2020/05/14/flowable-custom-engine-configuration/</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
